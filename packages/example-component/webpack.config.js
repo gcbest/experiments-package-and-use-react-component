@@ -6,7 +6,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = {
   entry: [
-    'react-hot-loader/patch',
     './src/index.tsx'
   ],
   output: {
@@ -87,9 +86,6 @@ const config = {
     contentBase: './dist'
   },
   plugins: [
-    new CopyPlugin({
-      patterns: [{ from: 'src/index.html' }],
-    }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin()
   ]
