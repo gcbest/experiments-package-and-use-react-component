@@ -10,7 +10,10 @@ const config = {
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    // These are IMPORTANT
+    // Output files that can be imported
+    filename: 'index.js',
+    libraryTarget: 'umd',
   },
   module: {
     rules: [
@@ -78,8 +81,21 @@ const config = {
       '.tsx',
       '.ts'
     ],
-    alias: {
-      'react-dom': '@hot-loader/react-dom'
+  },
+  externals: {
+    // This is IMPORTANT
+    // Don't bundle react or react-dom or you will get errors about having multiple versions of React and violating the rule of hooks
+    react: {
+      commonjs: "react",
+      commonjs2: "react",
+      amd: "React",
+      root: "React"
+    },
+    "react-dom": {
+      commonjs: "react-dom",
+      commonjs2: "react-dom",
+      amd: "ReactDOM",
+      root: "ReactDOM"
     }
   },
   devServer: {

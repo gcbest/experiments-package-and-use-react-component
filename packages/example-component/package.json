@@ -13,7 +13,8 @@
     "start": "npm run build-dev",
     "test": "jest"
   },
-  "dependencies": {
+  "dependencies": {},
+  "peerDependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-hot-loader": "^4.13.0"
@@ -42,6 +43,8 @@
     "less-loader": "^7.2.1",
     "less": "^4.1.0",
     "jest": "^26.6.3",
-    "babel-jest": "^26.6.3"
+    "babel-jest": "^26.6.3",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   }
 }

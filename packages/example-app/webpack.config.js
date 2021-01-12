@@ -80,6 +80,9 @@ const config = {
       '.ts'
     ],
     alias: {
+      // This is IMPORTANT
+      // This provides React to the component
+      'react': path.resolve(__dirname, './node_modules/react'),
       'react-dom': '@hot-loader/react-dom'
     }
   },
